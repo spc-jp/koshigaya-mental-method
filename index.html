@@ -1,0 +1,142 @@
+from pathlib import Path
+
+html = r"""<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEXT PLAY｜越谷ボーイズ メンタルトレーニング</title>
+<link rel="icon" href="https://spc-jp.github.io/koshigaya-method-app/favicon.png">
+<style>
+:root{--navy:#0d2746;--red:#9f090d;--bg:#f6f7f9;--card:#fff;--text:#172033;--muted:#667085;--line:#e6e8ec;--green:#19764a}
+*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;background:var(--bg);color:var(--text)}
+header{background:linear-gradient(135deg,var(--navy),#173f70);color:#fff;padding:22px 16px}
+.wrap{max-width:980px;margin:auto}.brand{font-weight:900;font-size:25px}.sub{opacity:.9;margin-top:6px;line-height:1.6}
+main{padding:18px 14px 40px}.grid{display:grid;grid-template-columns:240px 1fr;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 5px 18px rgba(15,23,42,.05)}
+h2,h3{margin-top:0}.small{font-size:13px;color:var(--muted);line-height:1.7}
+.step{padding:10px 12px;border-radius:12px;margin:8px 0;background:#f4f6f9;font-weight:700;cursor:pointer}
+.step.active{background:#e9eff7;color:var(--navy);outline:2px solid #b8c9dd}
+.progress{height:10px;background:#e8ebef;border-radius:99px;overflow:hidden}.bar{height:100%;background:var(--red);width:0}
+.badge{display:inline-block;font-size:12px;font-weight:800;background:#edf2f7;border-radius:99px;padding:6px 10px;margin-bottom:12px}
+.q{font-size:21px;font-weight:900;line-height:1.55;margin:6px 0 16px}
+.choice{width:100%;text-align:left;border:1px solid #d9dde4;background:#fff;border-radius:14px;padding:14px;margin:7px 0;font-size:15px;line-height:1.5;cursor:pointer}
+.choice:hover{background:#f7f9fb}.choice.correct{border-color:#75b994;background:#eef9f3}.choice.wrong{border-color:#d99191;background:#fff2f2}
+.feedback{display:none;margin-top:16px;padding:16px;border-radius:14px;background:#f8fafc;border-left:5px solid var(--navy);line-height:1.75}
+.feedback.show{display:block}.feedback strong{display:block;margin-top:9px}
+.actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:800;cursor:pointer}.primary{background:var(--navy);color:#fff}.secondary{background:#eceff3;color:#243247}
+.promise{border-left:4px solid var(--red);padding-left:12px;margin:10px 0;line-height:1.7}
+.metric{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+.quote{font-size:17px;font-weight:900;line-height:1.7;color:var(--navy)}
+footer{text-align:center;color:#7b8493;font-size:12px;padding:10px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.side{order:2}.brand{font-size:22px}.q{font-size:19px}.card{padding:15px}.steps{display:flex;overflow:auto;gap:7px;padding-bottom:4px}.step{white-space:nowrap;margin:0;font-size:13px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand">NEXT PLAY ― 次の一球へ</div>
+<div class="sub">越谷ボーイズ｜中学生・硬式野球のための「自分で考えて戦う」メンタルトレーニング</div>
+</div></header>
+
+<main class="wrap">
+<div class="grid">
+<aside class="side">
+<div class="card">
+<h3>成長ストーリー</h3>
+<div class="steps" id="steps"></div>
+</div>
+<div class="card" style="margin-top:14px">
+<h3>今日のルーティン</h3>
+<div class="small">① 息を長く吐く<br>② 今できることを1つ決める<br>③ 次の一球に集中</div>
+</div>
+</aside>
+
+<section>
+<div class="card">
+<div style="display:flex;justify-content:space-between;gap:12px;align-items:end">
+<div><div class="small">MENTAL TRAINING</div><h2 style="margin:3px 0">昨日の自分より、一歩前へ。</h2></div>
+<div class="small"><span id="done">0</span> / <span id="total">15</span> 問</div>
+</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+</div>
+
+<div class="card" style="margin-top:14px">
+<div class="badge" id="category"></div>
+<div class="q" id="question"></div>
+<div id="choices"></div>
+<div class="feedback" id="feedback"></div>
+<div class="actions">
+<button class="btn secondary" id="prev">← 前へ</button>
+<button class="btn secondary" id="random">ランダム</button>
+<button class="btn primary" id="next">次の一球へ →</button>
+</div>
+</div>
+
+<div class="card" style="margin-top:14px">
+<h3>このアプリの約束</h3>
+<div class="promise">ミスした選手を責めない</div>
+<div class="promise">失敗を隠さない</div>
+<div class="promise">自分で考えて、次の行動を決める</div>
+<div class="promise">仲間の成功を自分のことのように喜ぶ</div>
+</div>
+
+<div class="card" style="margin-top:14px">
+<div class="quote">「監督を日本一にしたい」を、言われたから動く力ではなく、<br>自分で考え、仲間のために動く力へ。</div>
+</div>
+</section>
+</div>
+</main>
+<footer>越谷ボーイズ メンタルトレーニング｜Prototype</footer>
+
+<script>
+const data=[
+{c:"自分を整える",q:"自分のエラーで相手に点が入った。次の守備につく前、どうする？",a:["下を向いて引きずる","誰かのせいにする","長く息を吐き、次の一球でできることを決める","ミスを忘れようと無理に考えない"],ok:2,think:"失敗した事実は消せません。でも、次の一球の準備は今からできます。",next:"息を吐く → グローブを見る → 『次！』と声を出す。",team:"近くの仲間にも『次いこう』と声をかける。"},
+{c:"自分を整える",q:"2打席連続で三振。3打席目に入る前に大切なのは？",a:["絶対ヒットを打つと力む","前の三振を何度も思い出す","自分でコントロールできることを1つ決める","監督の顔色を見る"],ok:2,think:"結果ではなく、今できる準備に意識を戻します。",next:"『ボールを最後まで見る』など1つだけ決める。",team:"打席を終えたら、次の打者に相手投手の情報を伝える。"},
+{c:"自分を整える",q:"大事な試合前。緊張して心臓がドキドキしている。どう考える？",a:["緊張する自分は弱い","緊張をゼロにしないとダメ","体が試合の準備をしているサインと考える","試合から逃げたいと考える"],ok:2,think:"緊張は悪者ではありません。大切な場面に向かう体の反応です。",next:"呼吸を整え、最初のプレーだけに集中する。",team:"仲間に明るく声をかけ、チームの空気を整える。"},
+{c:"仲間を支える",q:"仲間が2回続けてエラーした。あなたなら？",a:["『何やってるんだ』と言う","無視する","『次いこう。俺がカバーする』と声をかける","監督に交代を求める"],ok:2,think:"仲間が苦しい時の一言が、チームの次のプレーを変えます。",next:"短く前向きな声をかける。",team:"責める空気を作らず、全員を次の一球へ戻す。"},
+{c:"仲間を支える",q:"今日はベンチスタート。自分にできることは？",a:["出番まで何もしない","不満そうにする","相手の特徴を観察し、声と情報でチームに貢献する","スマホのことを考える"],ok:2,think:"試合に出ている11人や9人だけがチームではありません。",next:"相手投手・走者・守備位置などを観察する。",team:"必要な情報を短く仲間へ伝える。"},
+{c:"仲間を支える",q:"後輩が同じミスを繰り返している。どうする？",a:["怒鳴る","自分には関係ない","何が難しいか聞き、一つだけ改善点を一緒に考える","全部教えて従わせる"],ok:2,think:"教えることもチームを強くする力です。",next:"まず相手の話を聞く。",team:"『一緒にやろう』の姿勢を作る。"},
+{c:"チームを強くする",q:"0対4で負けていて、ベンチが静かになった。最初に何をする？",a:["誰かが声を出すのを待つ","負けを受け入れる","自分から具体的な声を出す","監督に任せる"],ok:2,think:"チームの空気は、誰か一人の行動から変わります。",next:"『先頭出よう！』『一つずつ返そう！』と具体的に声を出す。",team:"周囲を巻き込み、次の1点に集中させる。"},
+{c:"チームを強くする",q:"仲間が見逃し三振。ベンチに戻ってきた時は？",a:["責める","何も言わない","迎えて、次の役割へ気持ちを切り替えさせる","笑う"],ok:2,think:"終わったプレーより、次にチームへ何ができるかが大切です。",next:"『次あるぞ』と短く迎える。",team:"失敗しても戻ってこられるベンチを作る。"},
+{c:"チームを強くする",q:"練習で自分のプレーだけ良ければいい？",a:["もちろん自分だけでいい","レギュラーだけ良ければいい","自分の成長と同時にチームが良くなる行動も考える","監督が考えること"],ok:2,think:"強いチームは、自分の成長をチームの成長につなげます。",next:"自分の課題を一つ改善する。",team:"仲間への声、準備、片付けまでチームの一員として動く。"},
+{c:"自分で考える",q:"監督から細かい指示が出ない場面。どうする？",a:["何もしない","指示がないことに不満を言う","状況を見て、自分の役割と最善の行動を考える","好き勝手に動く"],ok:2,think:"自分で考えるとは、勝手にやることではなく、目的と状況から判断することです。",next:"アウトカウント・点差・走者・自分の役割を確認する。",team:"必要なら仲間と短く確認してから動く。"},
+{c:"自分で考える",q:"監督に『もっと考えてプレーしろ』と言われた。まず何を考える？",a:["怒られたことだけ考える","答えを全部聞く","次は何を見て判断すればいいか考える","自分には無理と思う"],ok:2,think:"答えを覚えるだけでなく、判断するための『見るポイント』を持ちます。",next:"『次は何を見れば判断できる？』と自分に問いかける。",team:"分からなければ仲間や指導者に質問する。"},
+{c:"自分で考える",q:"試合に負けた。反省で一番大切なのは？",a:["誰が悪かったか決める","全部ダメだったと考える","自分たちで変えられることを一つ決める","すぐ忘れる"],ok:2,think:"反省は落ち込む時間ではなく、次を良くする材料を見つける時間です。",next:"改善する行動を一つ言葉にする。",team:"チームでも『次に変える一つ』を共有する。"},
+{c:"日本一を目指す",q:"『監督を日本一にしたい』。その気持ちを行動にすると？",a:["監督の言うことを全部そのままやる","勝てない時は監督のせいにする","教えの意味を理解し、自分で考えてチームのために動く","気持ちだけ持っていればいい"],ok:2,think:"感謝は服従ではありません。教わったことを自分の力に変え、チームへ返すことです。",next:"今日、自分からできる一つを決める。",team:"仲間にも考えるきっかけを作る。"},
+{c:"日本一を目指す",q:"日本一を目指しているのに結果が出ない時は？",a:["目標を諦める","急に特別なことを始める","大きな目標を今日できる小さな行動に分ける","誰かのせいにする"],ok:2,think:"大きな目標は、毎日の小さな行動の積み重ねで近づきます。",next:"今日の練習で徹底することを一つ決める。",team:"チーム全員が続けられる小さな基準を大切にする。"},
+{c:"日本一を目指す",q:"日本一のチームに必要な『強い心』とは？",a:["絶対にミスしないこと","いつも自信満々でいること","失敗しても次の行動を選び続けること","弱音を一切吐かないこと"],ok:2,think:"本当の強さは、失敗しないことではなく、失敗のあとにどう動くかです。",next:"感情を認めて、次の一球へ戻る。",team:"仲間が戻れる声と空気を作る。"}
+];
+
+const cats=["自分を整える","仲間を支える","チームを強くする","自分で考える","日本一を目指す"];
+let filtered=[...data], idx=0, selectedCat=null;
+let solved=new Set(JSON.parse(localStorage.getItem("nextplaySolved")||"[]"));
+
+function renderSteps(){
+ const el=document.getElementById("steps"); el.innerHTML="";
+ cats.forEach(c=>{const d=document.createElement("div");d.className="step"+(selectedCat===c?" active":"");d.textContent=c;d.onclick=()=>{selectedCat=(selectedCat===c?null:c);filtered=selectedCat?data.filter(x=>x.c===selectedCat):[...data];idx=0;renderSteps();render()};el.appendChild(d)})
+}
+function render(){
+ const x=filtered[idx]; document.getElementById("category").textContent=x.c;
+ document.getElementById("question").textContent=x.q;
+ const choices=document.getElementById("choices");choices.innerHTML="";
+ x.a.forEach((t,i)=>{let b=document.createElement("button");b.className="choice";b.textContent=(i+1)+". "+t;b.onclick=()=>answer(i,b,x);choices.appendChild(b)});
+ document.getElementById("feedback").className="feedback"; updateProgress();
+}
+function answer(i,b,x){
+ document.querySelectorAll(".choice").forEach((el,j)=>{el.disabled=true;if(j===x.ok)el.classList.add("correct")});
+ if(i!==x.ok)b.classList.add("wrong");
+ const id=data.indexOf(x);solved.add(id);localStorage.setItem("nextplaySolved",JSON.stringify([...solved]));
+ const f=document.getElementById("feedback");f.innerHTML=(i===x.ok?"<b>✓ いい判断です</b>":"<b>ここからがトレーニング</b>")+
+ "<strong>考え方</strong>"+x.think+"<strong>次の行動</strong>"+x.next+"<strong>チームへの行動</strong>"+x.team;f.className="feedback show";updateProgress();
+}
+function updateProgress(){document.getElementById("done").textContent=solved.size;document.getElementById("total").textContent=data.length;document.getElementById("bar").style.width=(solved.size/data.length*100)+"%"}
+document.getElementById("next").onclick=()=>{idx=(idx+1)%filtered.length;render()};
+document.getElementById("prev").onclick=()=>{idx=(idx-1+filtered.length)%filtered.length;render()};
+document.getElementById("random").onclick=()=>{idx=Math.floor(Math.random()*filtered.length);render()};
+renderSteps();render();
+</script>
+</body></html>"""
+
+path = Path("/mnt/data/koshigaya_next_play_mental_prototype.html")
+path.write_text(html, encoding="utf-8")
+print(f"作成しました: {path} ({path.stat().st_size:,} bytes)")
