@@ -42,6 +42,11 @@ section>.card:nth-child(1){order:1}
 section>.card:nth-child(2){order:3}
 section>.card:nth-child(3){order:4}
 section>.card:nth-child(4){order:6}
+.section-title{display:flex;align-items:center;gap:9px}
+.icon-red{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;color:var(--red);flex:0 0 auto}
+.icon-red svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.step-icon{width:19px;height:19px;margin-right:7px;color:var(--red);flex:0 0 auto}
+.step-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .steps{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .step{
   min-height:48px;padding:10px 9px;border-radius:13px;background:#F7F7F8;font-weight:800;
@@ -106,11 +111,15 @@ footer{text-align:center;color:#7B8493;font-size:11px;padding:12px}
 <div class="grid">
 <aside class="side">
 <div class="card">
-<h3>成長ストーリー</h3>
+<h3 class="section-title"><span class="icon-red">
+<svg viewBox="0 0 24 24"><path d="M4 18l5-5 4 3 7-9"/><path d="M15 7h5v5"/></svg>
+</span>成長ストーリー</h3>
 <div class="steps" id="steps"></div>
 </div>
 <div class="card" style="margin-top:14px">
-<h3>今日のルーティン</h3>
+<h3 class="section-title"><span class="icon-red">
+<svg viewBox="0 0 24 24"><path d="M13 2s1 4-2 7c-2 2-3 4-2 7 1 3 4 5 7 4 4-1 6-5 4-9-1-2-3-4-5-5 0 3-1 4-2 5 1-4-2-6-2-9z"/></svg>
+</span>今日のルーティン</h3>
 <div class="small">① 息を長く吐く<br>② 今できることを1つ決める<br>③ 次の一球に集中</div>
 </div>
 </aside>
@@ -137,7 +146,9 @@ footer{text-align:center;color:#7B8493;font-size:11px;padding:12px}
 </div>
 
 <div class="card" style="margin-top:14px">
-<h3>このアプリの約束</h3>
+<h3 class="section-title"><span class="icon-red">
+<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9-9c-1.5-3.4.7-7 4.4-7 2 0 3.5 1 4.6 2.4C13.1 6 14.6 5 16.6 5c3.7 0 5.9 3.6 4.4 7-2 4.6-9 9-9 9z"/></svg>
+</span>このアプリの約束</h3>
 <div class="promise">ミスした選手を責めない</div>
 <div class="promise">失敗を隠さない</div>
 <div class="promise">自分で考えて、次の行動を決める</div>
@@ -179,12 +190,19 @@ const data=[
 ];
 
 const cats=["自分を整える","仲間を支える","チームを強くする","自分で考える","日本一を目指す"];
+const catIcons={
+"自分を整える":'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>',
+"仲間を支える":'<svg viewBox="0 0 24 24"><path d="M8 12l3 3 5-6"/><path d="M4 19c1-3 3-5 6-5"/><path d="M20 19c-1-3-3-5-6-5"/></svg>',
+"チームを強くする":'<svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-4 2-6 6-6s6 2 6 6"/><path d="M12 15c1-1 2-1 4-1 4 0 6 2 6 6"/></svg>',
+"自分で考える":'<svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M8 14c-2-1-3-3-3-5a7 7 0 0 1 14 0c0 2-1 4-3 5-1 1-1 2-1 3H9c0-1 0-2-1-3z"/></svg>',
+"日本一を目指す":'<svg viewBox="0 0 24 24"><path d="M8 4h8v5c0 4-2 6-4 6s-4-2-4-6V4z"/><path d="M8 6H4c0 4 2 6 5 6"/><path d="M16 6h4c0 4-2 6-5 6"/><path d="M12 15v4"/><path d="M8 21h8"/></svg>'
+};
 let filtered=[...data], idx=0, selectedCat=null;
 let solved=new Set(JSON.parse(localStorage.getItem("nextplaySolved")||"[]"));
 
 function renderSteps(){
  const el=document.getElementById("steps"); el.innerHTML="";
- cats.forEach(c=>{const d=document.createElement("div");d.className="step"+(selectedCat===c?" active":"");d.textContent=c;d.onclick=()=>{selectedCat=(selectedCat===c?null:c);filtered=selectedCat?data.filter(x=>x.c===selectedCat):[...data];idx=0;renderSteps();render()};el.appendChild(d)})
+ cats.forEach(c=>{const d=document.createElement("div");d.className="step"+(selectedCat===c?" active":"");d.innerHTML=`<span class="step-icon">${catIcons[c]}</span><span>${c}</span>`;d.onclick=()=>{selectedCat=(selectedCat===c?null:c);filtered=selectedCat?data.filter(x=>x.c===selectedCat):[...data];idx=0;renderSteps();render()};el.appendChild(d)})
 }
 function render(){
  const x=filtered[idx]; document.getElementById("category").textContent=x.c;
