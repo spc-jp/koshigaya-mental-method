@@ -126,7 +126,7 @@ body.bench-mode .mobile-nav button.bench-link{color:#9B070A}
 </div>
 </div></header>
 
-<div class="mode-tabs" role="tablist" aria-label="アプリの切り替え">
+<div class="mode-tabs" id="mainModeTabs" role="tablist" aria-label="アプリの切り替え">
 <button class="mode-tab active" id="tabTraining" type="button" role="tab" aria-selected="true" aria-controls="trainingArea" onclick="switchMode('training')">⚾ メンタルトレーニング</button>
 <button class="mode-tab" id="tabBench" type="button" role="tab" aria-selected="false" aria-controls="benchArea" onclick="switchMode('bench')">♡ こころのベンチ</button>
 </div>
@@ -287,13 +287,20 @@ function renderDailyMental(){
 renderDailyMental();
 
 
+// 同一ページ内に古い切り替えタブが重複挿入された場合は、
+// 最後のタブ（正式な切り替えタブ）だけを残す。
+(function removeDuplicateModeTabs(){
+ const groups=[...document.querySelectorAll('.mode-tabs')];
+ if(groups.length>1){groups.slice(0,-1).forEach(el=>el.remove());}
+})();
+
 function switchMode(mode){
  const bench = mode==='bench';
  document.body.classList.toggle('bench-mode',bench);
- document.getElementById('tabBench').classList.toggle('active',bench);
- document.getElementById('tabTraining').classList.toggle('active',!bench);
- document.getElementById('tabBench').setAttribute('aria-selected',String(bench));
- document.getElementById('tabTraining').setAttribute('aria-selected',String(!bench));
+ document.querySelector('#mainModeTabs #tabBench').classList.toggle('active',bench);
+ document.querySelector('#mainModeTabs #tabTraining').classList.toggle('active',!bench);
+ document.querySelector('#mainModeTabs #tabBench').setAttribute('aria-selected',String(bench));
+ document.querySelector('#mainModeTabs #tabTraining').setAttribute('aria-selected',String(!bench));
  document.querySelectorAll('.mobile-nav button').forEach(b=>b.classList.remove('active'));
  document.querySelector('.mobile-nav button'+(bench?'.bench-link':':first-child')).classList.add('active');
  history.replaceState(null,'',bench?'#kokoro-bench':'#mental');
