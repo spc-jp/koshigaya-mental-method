@@ -1,16 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NEXT PLAY｜越谷ボーイズ メンタルトレーニング</title>
-<link rel="icon" type="image/png" href="https://spc-jp.github.io/koshigaya-mental-method/favicon.png">
-<link rel="shortcut icon" type="image/png" href="https://spc-jp.github.io/koshigaya-mental-method/favicon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="https://spc-jp.github.io/koshigaya-mental-method/favicon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="NEXT PLAY">
-<meta name="theme-color" content="#9D080B">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>NEXT PLAY｜次の一歩へ。｜越谷ボーイズ</title>
+<link href="https://spc-jp.github.io/koshigaya-mental-method/favicon.png" rel="icon" type="image/png"/>
+<link href="https://spc-jp.github.io/koshigaya-mental-method/favicon.png" rel="shortcut icon" type="image/png"/>
+<link href="https://spc-jp.github.io/koshigaya-mental-method/favicon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="NEXT PLAY" name="apple-mobile-web-app-title"/>
+<meta content="#9D080B" name="theme-color"/>
 <style>
 :root{
   --red:#9D080B; --red-dark:#760507; --navy:#102F50; --navy2:#071B2E;
@@ -103,6 +104,20 @@ footer{text-align:center;color:#7B8493;font-size:11px;padding:12px}
  .q{font-size:21px}.actions{display:flex}.primary{grid-column:auto;grid-row:auto;margin-left:auto}
 }
 
+/* NEXT PLAY renewed hero */
+header{background:linear-gradient(115deg,#a3080b 0%,#870306 60%,#590103 100%);padding:24px 16px 29px}
+header:after{width:230px;height:230px;right:-68px;top:-116px;opacity:.8}
+.header-inner{gap:18px;align-items:center}
+.header-logo{width:75px;height:75px;border-radius:15px;padding:5px}
+.brand{font-size:clamp(20px,3.1vw,31px);letter-spacing:.005em;line-height:1.4}
+.brand-divider{opacity:.75;font-weight:500}
+.hero-tagline{font-size:clamp(16px,2vw,21px);font-weight:850;margin-top:5px;line-height:1.5}
+.hero-modes{font-size:clamp(12px,1.4vw,15px);font-weight:750;margin-top:12px;letter-spacing:.02em}
+.sub{font-size:12px;line-height:1.65;opacity:.94;margin-top:3px}
+.mode-tabs{padding-top:16px}
+@media(min-width:761px){header{padding:31px 16px 35px}.header-logo{width:92px;height:92px}.mode-tabs{padding-top:20px}}
+@media(max-width:500px){header{padding:20px 13px 24px}.header-inner{gap:12px}.header-logo{width:60px;height:60px}.brand{font-size:20px}.hero-tagline{font-size:15px}.hero-modes{font-size:12px;margin-top:9px}.sub{font-size:10.5px}}
+
 /* Integrated section tabs */
 .mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 auto;padding:12px 12px 0;width:min(100%,980px)}
 .mode-tab{border:1px solid #e5dada;background:#fff;color:#4b5563;border-radius:15px;padding:12px 8px;font-size:14px;font-weight:900;cursor:pointer;min-height:50px}
@@ -115,43 +130,58 @@ body.bench-mode .mobile-nav button{color:#667085}
 body.bench-mode .mobile-nav button.bench-link{color:#9B070A}
 .mode-tab:focus-visible,.mobile-nav button:focus-visible{outline:3px solid #245dc3;outline-offset:2px}
 @media(min-width:761px){.mode-tabs{padding:16px 14px 0}.mode-tab{font-size:16px}}
+
+/* 使い方ガイド */
+.help-entry{position:absolute;right:15px;top:12px;z-index:5;border:1px solid #ffffffa8;background:#ffffff;color:#8b070a;padding:10px 15px;border-radius:999px;font-weight:900;font-size:14px;box-shadow:0 3px 12px #0002;cursor:pointer}
+.help-entry:focus-visible,.help-close:focus-visible{outline:3px solid #f1bf65;outline-offset:3px}
+.help-overlay[hidden]{display:none!important}
+.help-overlay{position:fixed;inset:0;background:#172033ae;z-index:1000;display:grid;place-items:center;padding:12px}
+.help-panel{width:min(720px,100%);max-height:min(90vh,850px);overflow:auto;overscroll-behavior:contain;background:#fff;border-radius:20px;box-shadow:0 18px 60px #0004;color:#172033;position:relative}
+.help-heading{background:#9B070A;color:#fff;padding:23px 64px 21px 23px}
+.help-heading h2{font-size:23px;margin:0 0 7px}.help-heading p{font-size:14px;margin:0;line-height:1.7}
+.help-close{position:absolute;right:16px;top:18px;background:#fff;color:#8a0509;border:0;width:42px;height:42px;border-radius:50%;font-size:24px;cursor:pointer}
+.help-content{padding:22px 24px 28px;line-height:1.85;font-size:15px}
+.help-content h3{font-size:18px;color:#92070A;border-left:4px solid #9B070A;padding-left:10px;margin:23px 0 10px}
+.help-content p{margin:10px 0}.help-content ul,.help-content ol{padding-left:1.5em;margin:8px 0 16px}.help-content li{margin:9px 0}
+.help-note{background:#fff7f2;border:1px solid #f2ded3;padding:13px;border-radius:12px;font-size:14px}
+@media(max-width:600px){.help-entry{top:8px;right:9px;padding:8px 11px;font-size:12px}.help-heading{padding-top:25px}.help-content{padding:17px}.help-panel{max-height:94dvh}header .header-inner{padding-top:30px}}
 </style>
 </head>
 <body>
-<header><div class="wrap header-inner">
-<img class="header-logo" src="https://spc-jp.github.io/koshigaya-mental-method/favicon.png" alt="越谷ボーイズ ロゴ">
+<header><button class="help-entry" type="button" onclick="openHelp()" aria-haspopup="dialog">？ 使い方</button><div class="wrap header-inner">
+<img alt="越谷ボーイズ ロゴ" class="header-logo" src="https://spc-jp.github.io/koshigaya-mental-method/favicon.png"/>
 <div>
-<div class="brand">NEXT PLAY｜次の一球へ</div>
-<div class="sub">越谷ボーイズ｜中学生・硬式野球のための「自分で考えて戦う」メンタルトレーニング</div>
+<div class="brand">NEXT PLAY <span class="brand-divider">｜</span>次の一歩へ。</div>
+<div class="hero-tagline">強くなる日も、立ち止まる日も。</div>
+<div class="hero-modes">メンタルトレーニング × こころのベンチ</div>
+<div class="sub">越谷ボーイズ｜中学生・硬式野球のための心の成長サポート</div>
 </div>
 </div></header>
-
-<div class="mode-tabs" id="mainModeTabs" role="tablist" aria-label="アプリの切り替え">
-<button class="mode-tab active" id="tabTraining" type="button" role="tab" aria-selected="true" aria-controls="trainingArea" onclick="switchMode('training')">⚾ メンタルトレーニング</button>
-<button class="mode-tab" id="tabBench" type="button" role="tab" aria-selected="false" aria-controls="benchArea" onclick="switchMode('bench')">♡ こころのベンチ</button>
+<div aria-label="アプリの切り替え" class="mode-tabs" id="mainModeTabs" role="tablist">
+<button aria-controls="trainingArea" aria-selected="true" class="mode-tab active" id="tabTraining" onclick="switchMode('training')" role="tab" type="button">⚾ メンタルトレーニング</button>
+<button aria-controls="benchArea" aria-selected="false" class="mode-tab" id="tabBench" onclick="switchMode('bench')" role="tab" type="button">♡ こころのベンチ</button>
 </div>
 <main class="wrap" id="trainingArea">
 <div class="grid">
 <aside class="side">
 <div class="card">
 <h3 class="section-title"><span class="icon-red">
-<svg viewBox="0 0 24 24"><path d="M4 18l5-5 4 3 7-9"/><path d="M15 7h5v5"/></svg>
+<svg viewbox="0 0 24 24"><path d="M4 18l5-5 4 3 7-9"></path><path d="M15 7h5v5"></path></svg>
 </span>成長ストーリー</h3>
 <div class="steps" id="steps"></div>
 </div>
 <div class="card" style="margin-top:14px">
 <h3 class="section-title"><span class="icon-red">
-<svg viewBox="0 0 24 24"><path d="M13 2s1 4-2 7c-2 2-3 4-2 7 1 3 4 5 7 4 4-1 6-5 4-9-1-2-3-4-5-5 0 3-1 4-2 5 1-4-2-6-2-9z"/></svg>
+<svg viewbox="0 0 24 24"><path d="M13 2s1 4-2 7c-2 2-3 4-2 7 1 3 4 5 7 4 4-1 6-5 4-9-1-2-3-4-5-5 0 3-1 4-2 5 1-4-2-6-2-9z"></path></svg>
 </span>今日のルーティン</h3>
 <div id="routineTheme" style="font-weight:900;color:var(--red);margin:2px 0 8px"></div>
 <div class="small" id="dailyRoutine"></div>
 <div style="margin-top:13px;padding:12px 13px;background:var(--soft-red);border-radius:13px;border-left:4px solid var(--red)">
-  <div style="font-size:11px;font-weight:900;color:var(--red);letter-spacing:.06em">今日のひと言</div>
-  <div id="dailyWord" style="font-size:14px;font-weight:900;line-height:1.65;margin-top:4px"></div>
+<div style="font-size:11px;font-weight:900;color:var(--red);letter-spacing:.06em">今日のひと言</div>
+<div id="dailyWord" style="font-size:14px;font-weight:900;line-height:1.65;margin-top:4px"></div>
 </div>
 </div>
 </aside>
-
 <section>
 <div class="card">
 <div style="display:flex;justify-content:space-between;gap:12px;align-items:end">
@@ -160,7 +190,6 @@ body.bench-mode .mobile-nav button.bench-link{color:#9B070A}
 </div>
 <div class="progress"><div class="bar" id="bar"></div></div>
 </div>
-
 <div class="card" style="margin-top:14px">
 <div class="badge" id="category"></div>
 <div class="q" id="question"></div>
@@ -172,50 +201,168 @@ body.bench-mode .mobile-nav button.bench-link{color:#9B070A}
 <button class="btn primary" id="next">次の一球へ →</button>
 </div>
 </div>
-
 <div class="card" style="margin-top:14px">
 <h3 class="section-title"><span class="icon-red">
-<svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9-9c-1.5-3.4.7-7 4.4-7 2 0 3.5 1 4.6 2.4C13.1 6 14.6 5 16.6 5c3.7 0 5.9 3.6 4.4 7-2 4.6-9 9-9 9z"/></svg>
+<svg viewbox="0 0 24 24"><path d="M12 21s-7-4.4-9-9c-1.5-3.4.7-7 4.4-7 2 0 3.5 1 4.6 2.4C13.1 6 14.6 5 16.6 5c3.7 0 5.9 3.6 4.4 7-2 4.6-9 9-9 9z"></path></svg>
 </span>このアプリの約束</h3>
 <div class="promise">ミスした選手を責めない</div>
 <div class="promise">失敗を隠さない</div>
 <div class="promise">自分で考えて、次の行動を決める</div>
 <div class="promise">仲間の成功を自分のことのように喜ぶ</div>
 </div>
-
 <div class="card" style="margin-top:14px">
-<div class="quote">「監督を日本一にしたい」を、言われたから動く力ではなく、<br>自分で考え、仲間のために動く力へ。</div>
+<div class="quote">「監督を日本一にしたい」を、言われたから動く力ではなく、<br/>自分で考え、仲間のために動く力へ。</div>
 </div>
 </section>
 </div>
 </main>
-
-<div id="benchArea" role="tabpanel" aria-labelledby="tabBench"><iframe id="benchFrame" title="こころのベンチ Ver.2" loading="eager" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;ja&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;meta name=&quot;theme-color&quot; content=&quot;#9B070A&quot;&gt;&lt;meta name=&quot;description&quot; content=&quot;NEXT PLAY こころのベンチ。野球で悩んだとき、気持ちを整理して、安心できる次の一歩を探す場所。&quot;&gt;&lt;title&gt;NEXT PLAY｜こころのベンチ Ver.2&lt;/title&gt;&lt;style&gt;
+<div aria-labelledby="tabBench" id="benchArea" role="tabpanel"><iframe id="benchFrame" loading="eager" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;ja&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;/&gt;&lt;meta content=&quot;width=device-width,initial-scale=1&quot; name=&quot;viewport&quot;/&gt;&lt;meta content=&quot;#9B070A&quot; name=&quot;theme-color&quot;/&gt;&lt;meta content=&quot;NEXT PLAY こころのベンチ。野球で悩んだとき、気持ちを整理して、安心できる次の一歩を探す場所。&quot; name=&quot;description&quot;/&gt;&lt;title&gt;NEXT PLAY｜こころのベンチ Ver.3&lt;/title&gt;&lt;style&gt;
 :root{--red:#9B070A;--dark:#263044;--cream:#fffaf6;--muted:#687286;--border:#ebe4e0;--bg:#f7f5f2;font-family:system-ui,-apple-system,&quot;Hiragino Kaku Gothic ProN&quot;,&quot;Yu Gothic&quot;,sans-serif;color:var(--dark);background:var(--bg)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0}button,textarea{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #d99a4b;outline-offset:3px}header{background:linear-gradient(138deg,#770508,#9B070A 58%,#b73b36);color:#fff;padding:16px 18px 42px}.container{width:min(760px,calc(100% - 32px));margin:auto}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:850;letter-spacing:.12em;font-size:12px}.version{font-size:11px;border:1px solid #ffffff70;border-radius:99px;padding:6px 10px}h1{font-size:clamp(31px,7.2vw,48px);letter-spacing:.045em;margin:30px 0 12px}header p{line-height:1.9;color:#fff3f2;margin:0}.hero-art{font-size:46px;margin-top:17px}.hero-bottom{margin-top:24px;display:flex;gap:9px;flex-wrap:wrap}.jump{background:#fff;color:var(--red);border-radius:99px;text-decoration:none;font-weight:800;font-size:13px;padding:12px 18px}.jump.alt{background:#ffffff20;color:white;border:1px solid #ffffff80}main{margin-top:-21px;position:relative;padding-bottom:35px}.panel{background:#fff;border:1px solid var(--border);border-radius:21px;padding:24px 21px;margin-bottom:17px;box-shadow:0 9px 30px #503c320a}.tag{font-size:12px;color:var(--red);font-weight:850;letter-spacing:.04em}.panel h2{font-size:21px;margin:9px 0 10px;letter-spacing:.02em}.lead{font-size:14px;line-height:1.9;color:#616b7b;margin:0 0 18px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.choice{border:1px solid #dfdfe3;color:#344056;border-radius:14px;min-height:60px;background:#fff;padding:11px 8px;font-weight:800;font-size:14px;text-align:center;line-height:1.5}.choice.selected{background:#fff1ef;border-color:var(--red);color:#850509;box-shadow:inset 0 0 0 1px var(--red)}.choice:active{transform:scale(.99)}.response{display:none;background:#fff8f3;border:1px solid #f1d9c8;border-left:4px solid var(--red);border-radius:12px;padding:17px;margin-top:15px;line-height:1.9;white-space:pre-line;font-size:15px}.response.show{display:block}.soft{background:#fffaf3}.story{margin-top:12px;border:1px solid #e9e4dd;background:#fff;border-radius:15px;padding:17px}.story h3{font-size:16px;margin:0 0 9px}.story p{margin:0;line-height:1.85;font-size:14px}.note{font-size:12px;color:var(--muted);line-height:1.8}.story .note{margin-top:10px}.label{font-weight:800;font-size:14px;display:block;margin-bottom:9px}textarea{width:100%;min-height:112px;border:1px solid #dadde3;border-radius:14px;padding:13px;resize:vertical;line-height:1.7}.action{width:100%;padding:14px 16px;border:0;border-radius:13px;font-weight:850;font-size:15px;background:var(--red);color:white;margin-top:11px}.action.outline{background:#fff;color:var(--red);border:1px solid #d8b3b1}.action.ghost{background:#f1f2f4;color:#394252}.status{font-size:12px;color:#576375;min-height:1.5em}.sharebox{display:none;margin-top:14px;padding:14px;background:#fff8f1;border:1px solid #f0d7c5;border-radius:12px;line-height:1.8;white-space:pre-wrap}.sharebox.show{display:block}.tabs{display:flex;gap:8px;margin:22px auto 15px}.tab{border-radius:99px;border:1px solid #ddd6d0;background:white;padding:11px 16px;font-weight:800;flex:1;color:#5c5660}.tab.active{background:var(--red);color:white;border-color:var(--red)}.audience{display:none}.audience.active{display:block}.example{background:#f7f7f9;border-left:3px solid #a6a9b4;padding:14px 15px;line-height:1.9;font-size:14px;border-radius:8px}.bullets{padding-left:1.4em;color:#465063;line-height:2;font-size:14px}.callout{border-radius:14px;background:#f7f0e9;padding:15px 17px;line-height:1.8;font-size:14px}.disclaimer{padding:5px 5px 17px;font-size:12px;line-height:1.9;color:#667181}footer{text-align:center;font-size:12px;color:#7b8190;padding:18px 0 22px}@media(min-width:650px){.panel{padding:29px 32px}.choices{grid-template-columns:repeat(4,minmax(0,1fr))}.choices.three{grid-template-columns:repeat(3,minmax(0,1fr))}header{padding-bottom:55px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;header&gt;&lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;topline&quot;&gt;&lt;div class=&quot;brand&quot;&gt;NEXT PLAY &lt;span style=&quot;font-weight:450&quot;&gt;/ 次の一球へ&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;version&quot;&gt;体験デモ Ver.2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;hero-art&quot; aria-hidden=&quot;true&quot;&gt;⚾ 🌿&lt;/div&gt;&lt;h1&gt;こころのベンチ&lt;/h1&gt;&lt;p&gt;疲れたら、ちょっと座っていい。&lt;br&gt;元気になったら、また次の一歩へ。&lt;br&gt;野球が好きでも、つらい日はあるから。&lt;/p&gt;&lt;div class=&quot;hero-bottom&quot;&gt;&lt;a class=&quot;jump&quot; href=&quot;#check&quot;&gt;いまの気持ちを選ぶ&lt;/a&gt;&lt;a class=&quot;jump alt&quot; href=&quot;#voice&quot;&gt;先輩の声を読む&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/header&gt;&lt;main class=&quot;container&quot;&gt;&lt;div class=&quot;tabs&quot; role=&quot;tablist&quot; aria-label=&quot;対象者を選ぶ&quot;&gt;&lt;button class=&quot;tab active&quot; id=&quot;playerTab&quot; type=&quot;button&quot; role=&quot;tab&quot; aria-selected=&quot;true&quot; aria-controls=&quot;player&quot;&gt;選手のみんなへ&lt;/button&gt;&lt;button class=&quot;tab&quot; id=&quot;parentTab&quot; type=&quot;button&quot; role=&quot;tab&quot; aria-selected=&quot;false&quot; aria-controls=&quot;parent&quot;&gt;父母・指導者の方へ&lt;/button&gt;&lt;/div&gt;
-&lt;div id=&quot;player&quot; class=&quot;audience active&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;playerTab&quot;&gt;&lt;section class=&quot;panel&quot; id=&quot;check&quot;&gt;&lt;div class=&quot;tag&quot;&gt;01 / CHECK IN&lt;/div&gt;&lt;h2&gt;いま、どんな気持ち？&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;どんな答えでも大丈夫。正解も点数もないよ。選ぶだけでOK。&lt;/p&gt;&lt;div class=&quot;choices&quot; id=&quot;moods&quot;&gt;&lt;button class=&quot;choice&quot; data-key=&quot;happy&quot; aria-pressed=&quot;false&quot;&gt;😊&lt;br&gt;楽しい&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;tired&quot; aria-pressed=&quot;false&quot;&gt;😮‍💨&lt;br&gt;疲れている&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;sad&quot; aria-pressed=&quot;false&quot;&gt;😔&lt;br&gt;落ち込んでいる&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;quit&quot; aria-pressed=&quot;false&quot;&gt;💭&lt;br&gt;辞めたいかも&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;response&quot; id=&quot;moodResponse&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;/section&gt;
-&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;02 / FIND YOUR FEELING&lt;/div&gt;&lt;h2&gt;何がいちばん気になってる？&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;理由がわからなくても大丈夫。近いものを一つ選んでみよう。&lt;/p&gt;&lt;div class=&quot;choices&quot; id=&quot;worries&quot;&gt;&lt;button class=&quot;choice&quot; data-key=&quot;skill&quot; aria-pressed=&quot;false&quot;&gt;⚾&lt;br&gt;練習や実力&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;game&quot; aria-pressed=&quot;false&quot;&gt;🧢&lt;br&gt;試合や出番&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;friends&quot; aria-pressed=&quot;false&quot;&gt;🤝&lt;br&gt;仲間とのこと&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;adult&quot; aria-pressed=&quot;false&quot;&gt;🗣️&lt;br&gt;大人とのこと&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;body&quot; aria-pressed=&quot;false&quot;&gt;🌙&lt;br&gt;体の疲れ&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;home&quot; aria-pressed=&quot;false&quot;&gt;🏠&lt;br&gt;家のこと・費用&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;other&quot; aria-pressed=&quot;false&quot;&gt;🌧️&lt;br&gt;うまく言えない&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;response&quot; id=&quot;worryResponse&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;/section&gt;
-&lt;section class=&quot;panel soft&quot; id=&quot;voice&quot;&gt;&lt;div class=&quot;tag&quot;&gt;03 / VOICES&lt;/div&gt;&lt;h2&gt;先輩も、悩んだことがある&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;同じ悩みを持つ人がいるかもしれない。ここにある声は&lt;strong&gt;掲載イメージのための架空の文章&lt;/strong&gt;だよ。&lt;/p&gt;&lt;div class=&quot;story&quot;&gt;&lt;h3&gt;「みんなより上手くできなくて…」&lt;/h3&gt;&lt;p&gt;練習がつらい日もあった。そんなとき「今日はここができた」と小さな変化を見つけるようにした。つらい気持ちは、大人にも話した。&lt;/p&gt;&lt;p class=&quot;note&quot;&gt;※架空の例文／卒団生の実話ではありません&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;story&quot;&gt;&lt;h3&gt;「試合に出られず、くやしかった」&lt;/h3&gt;&lt;p&gt;何のために練習しているのか、わからなくなった。でも自分の気持ちを聞いてくれる人がいて、少し楽になった。&lt;/p&gt;&lt;p class=&quot;note&quot;&gt;※架空の例文／卒団生の実話ではありません&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;story&quot;&gt;&lt;h3&gt;「仲間とうまく話せなかった」&lt;/h3&gt;&lt;p&gt;ひとりで我慢していたけれど、学校の先生に話すところから始めた。相手とすぐに仲直りしなくても、相談してよかったと思った。&lt;/p&gt;&lt;p class=&quot;note&quot;&gt;※架空の例文／卒団生の実話ではありません&lt;/p&gt;&lt;/div&gt;&lt;/section&gt;
-&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;04 / TALK TO SOMEONE&lt;/div&gt;&lt;h2&gt;ひとりで抱えなくていい&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;ここに書いたことを、誰かに見せる必要はないよ。でも話したいと思ったら、言葉をつくるお手伝いができる。&lt;/p&gt;&lt;label for=&quot;memo&quot; class=&quot;label&quot;&gt;いま伝えたいこと（書かなくてもOK）&lt;/label&gt;&lt;textarea id=&quot;memo&quot; maxlength=&quot;800&quot; placeholder=&quot;例：最近、練習に行くのがつらい。理由はまだうまく言えない。&quot;&gt;&lt;/textarea&gt;&lt;p class=&quot;note&quot;&gt;入力内容はサーバーへ送らず、保存もしません。ページを閉じたり更新したりすると消えます。共有端末では画面に注意してね。&lt;/p&gt;&lt;button type=&quot;button&quot; class=&quot;action&quot; id=&quot;draft&quot;&gt;相談する言葉をつくる&lt;/button&gt;&lt;div id=&quot;draftResult&quot; class=&quot;sharebox&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; class=&quot;action outline&quot; id=&quot;copyDraft&quot; style=&quot;display:none&quot;&gt;文章をコピーする&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;action ghost&quot; id=&quot;erase&quot;&gt;入力・相談文を消す&lt;/button&gt;&lt;p id=&quot;copyStatus&quot; class=&quot;status&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;div class=&quot;callout&quot; style=&quot;margin-top:18px&quot;&gt;相談相手は、親、学校の先生、信頼できるコーチ、チームの外の大人でもいいよ。もし大人から怖い思いをさせられているなら、その人以外に話してね。&lt;strong&gt;辞めるかどうかも、急いで決めなくて大丈夫。&lt;/strong&gt;&lt;/div&gt;&lt;/section&gt;
-&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;05 / SMALL STEP&lt;/div&gt;&lt;h2&gt;今日の小さな一歩&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;頑張るだけが答えじゃない。いまできそうなことを選んでみよう。&lt;/p&gt;&lt;div class=&quot;choices&quot; id=&quot;steps&quot;&gt;&lt;button class=&quot;choice&quot; data-key=&quot;rest&quot; aria-pressed=&quot;false&quot;&gt;🌙&lt;br&gt;今日は休む&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;talk&quot; aria-pressed=&quot;false&quot;&gt;🫶&lt;br&gt;誰かに話す&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;good&quot; aria-pressed=&quot;false&quot;&gt;🌱&lt;br&gt;できたことを探す&lt;/button&gt;&lt;button class=&quot;choice&quot; data-key=&quot;wait&quot; aria-pressed=&quot;false&quot;&gt;☁️&lt;br&gt;今日は決めない&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;response&quot; id=&quot;stepResponse&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;
-&lt;div id=&quot;parent&quot; class=&quot;audience&quot; role=&quot;tabpanel&quot; aria-labelledby=&quot;parentTab&quot;&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;FOR PARENTS &amp; COACHES&lt;/div&gt;&lt;h2&gt;「こころのベンチ」の目的&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;選手を無理に引き止めるのではなく、つらい気持ちを言葉にして、安心して相談できるきっかけをつくるための試作アプリです。&lt;/p&gt;&lt;div class=&quot;callout&quot;&gt;&lt;strong&gt;目指すのは「退団の防止」だけではありません。&lt;/strong&gt;&lt;br&gt;選手一人ひとりの気持ちを大切にして、安心して野球と向き合える環境をつくることです。&lt;/div&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;HOW TO SUPPORT&lt;/div&gt;&lt;h2&gt;こんな声かけから&lt;/h2&gt;&lt;div class=&quot;example&quot;&gt;&lt;strong&gt;「練習に行きたくない」と言われたら&lt;/strong&gt;&lt;br&gt;「そうなんだね。何かあった？ 今すぐ話さなくてもいいよ」&lt;/div&gt;&lt;div class=&quot;example&quot; style=&quot;margin-top:12px&quot;&gt;&lt;strong&gt;「野球を辞めたい」と言われたら&lt;/strong&gt;&lt;br&gt;「話してくれてありがとう。何がつらいのか、一緒に整理しよう」&lt;/div&gt;&lt;div class=&quot;example&quot; style=&quot;margin-top:12px&quot;&gt;&lt;strong&gt;何も話してくれないときは&lt;/strong&gt;&lt;br&gt;「話したくなったらいつでも聞くよ。別の大人に相談してもいいよ」&lt;/div&gt;&lt;p class=&quot;note&quot;&gt;つらさを軽く見たり、本人の意思を無視して説得したりしないことが大切です。&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;NEXT STEP&lt;/div&gt;&lt;h2&gt;試作品への意見を集めましょう&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;まずは選手・父母・指導者それぞれに、使いやすさや必要な支援を聞いてから正式版を検討します。&lt;/p&gt;&lt;ul class=&quot;bullets&quot;&gt;&lt;li&gt;選手：どの言葉が安心する？ 使いにくい場所は？&lt;/li&gt;&lt;li&gt;父母：家庭で困る場面は？ どんな声かけが役立つ？&lt;/li&gt;&lt;li&gt;指導者：選手を支えるために不足している仕組みは？&lt;/li&gt;&lt;li&gt;相談担当：相談を受けた後、誰がどのように対応する？&lt;/li&gt;&lt;/ul&gt;&lt;p class=&quot;note&quot;&gt;ヒアリングは任意とし、選手の気持ちや回答を評価・選抜・指導上の不利益につなげないことが前提です。&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;PRIVACY &amp; SAFETY&lt;/div&gt;&lt;h2&gt;運用前に決めたいこと&lt;/h2&gt;&lt;ul class=&quot;bullets&quot;&gt;&lt;li&gt;相談先は本人が選べるようにする&lt;/li&gt;&lt;li&gt;誰が相談を受け、いつ返事をするかを明確にする&lt;/li&gt;&lt;li&gt;本人の同意なく相談内容をチーム内に広めない（安全確保が必要な場合を除く）&lt;/li&gt;&lt;li&gt;実際の「先輩の声」は本人・必要に応じて保護者の同意を得て掲載する&lt;/li&gt;&lt;li&gt;深刻な悩みがあるときはアプリだけで対応せず、信頼できる大人や適切な専門窓口につなぐ&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;/div&gt;
-&lt;p class=&quot;disclaimer&quot;&gt;【企画デモ Ver.2】このHTMLは「NEXT PLAY｜次の一球へ」に追加する独立型の試作です。既存アプリの15問は含みません。入力内容の保存・集計・送信・LINE連携は行いません。緊急時の相談対応機能もありません。実運用前に相談体制と個人情報の扱いを整えてください。&lt;/p&gt;&lt;footer&gt;NEXT PLAY｜こころのベンチ Ver.2&lt;br&gt;ちょっと休んで、また次の一歩へ。&lt;/footer&gt;&lt;/main&gt;&lt;script&gt;
-&#x27;use strict&#x27;;const moods={happy:&#x27;いいね。楽しい気持ちを大切にしよう。もちろん、楽しくない日があっても大丈夫。&#x27;,tired:&#x27;おつかれさま。疲れた日は休んでいいよ。頑張り続けなくても、君の価値は変わらない。&#x27;,sad:&#x27;落ち込んだんだね。無理に元気を出さなくていい。つらい気持ちを、そのまま大切にしていいよ。&#x27;,quit:&#x27;「辞めたいかも」と思うほど、しんどいことがあるのかもしれないね。辞めることも続けることも、急いで決めなくていい。信頼できる人と一緒に考えてみよう。&#x27;};const worries={skill:&#x27;うまくできないと、くやしいよね。できなかったことだけでなく、今日少しでも変わったことを探してみよう。負担が大きいときは、練習のことを大人に相談していい。&#x27;,game:&#x27;出番が少なくて、さみしい・くやしいと感じるのは自然なことだよ。気持ちを我慢せず、信頼できる人に話していい。&#x27;,friends:&#x27;仲間のことでしんどいとき、ひとりで解決しなくていいよ。安心できる大人を頼っていい。いじめや嫌がらせがあるなら、無理に相手と直接話さなくても大丈夫。&#x27;,adult:&#x27;大人の言葉や接し方がつらいときは、無理してその人に伝えなくていい。親、学校の先生、チームの外の大人など、別の安心できる人に話そう。&#x27;,body:&#x27;体が疲れているなら、休息も必要だよ。痛みや体調の悪さが続くときは、保護者や医療の専門家に相談しよう。&#x27;,home:&#x27;家のことやお金のことは、君ひとりが背負わなくていい。家族や信頼できる大人と一緒に考えることだよ。&#x27;,other:&#x27;うまく言葉にできなくても大丈夫。「何となくつらい」だけでも、相談する理由になるよ。&#x27;};const steps={rest:&#x27;今日はゆっくり休んでね。休むことも、自分を大切にする行動だよ。&#x27;,talk:&#x27;話してみようと思えたことが、ひとつの大切な一歩だよ。短いひと言でも十分。&#x27;,good:&#x27;今日のできたことは、小さくても大切だよ。何も思いつかない日は、探さなくても大丈夫。&#x27;,wait:&#x27;今日は決めない。それも立派な選択だよ。安心できるときに、少しずつ考えよう。&#x27;};let selectedMood=&#x27;&#x27;,selectedWorry=&#x27;&#x27;,selectedStep=&#x27;&#x27;,draftText=&#x27;&#x27;;function wire(id,table,out,save){document.querySelectorAll(&#x27;#&#x27;+id+&#x27; .choice&#x27;).forEach(b=&gt;b.addEventListener(&#x27;click&#x27;,()=&gt;{document.querySelectorAll(&#x27;#&#x27;+id+&#x27; .choice&#x27;).forEach(x=&gt;{x.classList.remove(&#x27;selected&#x27;);x.setAttribute(&#x27;aria-pressed&#x27;,&#x27;false&#x27;)});b.classList.add(&#x27;selected&#x27;);b.setAttribute(&#x27;aria-pressed&#x27;,&#x27;true&#x27;);save(b.dataset.key);let result=document.getElementById(out);result.textContent=table[b.dataset.key];result.classList.add(&#x27;show&#x27;)}))}wire(&#x27;moods&#x27;,moods,&#x27;moodResponse&#x27;,v=&gt;selectedMood=v);wire(&#x27;worries&#x27;,worries,&#x27;worryResponse&#x27;,v=&gt;selectedWorry=v);wire(&#x27;steps&#x27;,steps,&#x27;stepResponse&#x27;,v=&gt;selectedStep=v);
-const tabs=[document.getElementById(&#x27;playerTab&#x27;),document.getElementById(&#x27;parentTab&#x27;)],panels=[document.getElementById(&#x27;player&#x27;),document.getElementById(&#x27;parent&#x27;)];function switchTab(i){tabs.forEach((t,j)=&gt;{let on=i===j;t.classList.toggle(&#x27;active&#x27;,on);t.setAttribute(&#x27;aria-selected&#x27;,String(on));panels[j].classList.toggle(&#x27;active&#x27;,on)});window.scrollTo({top:0,behavior:&#x27;instant&#x27;})}tabs.forEach((t,i)=&gt;t.addEventListener(&#x27;click&#x27;,()=&gt;switchTab(i)));
-const memo=document.getElementById(&#x27;memo&#x27;),draftResult=document.getElementById(&#x27;draftResult&#x27;),copyBtn=document.getElementById(&#x27;copyDraft&#x27;),copyStatus=document.getElementById(&#x27;copyStatus&#x27;);document.getElementById(&#x27;draft&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const txt=memo.value.trim();draftText=&#x27;少し話を聞いてほしいことがあります。\n&#x27;+(txt?&#x27;今の気持ち：&#x27;+txt+&#x27;\n&#x27;:&#x27;うまく説明できないけれど、少しつらいと感じています。\n&#x27;)+&#x27;今すぐ答えを出すのではなく、まず話を聞いてもらえますか。&#x27;;draftResult.textContent=draftText;draftResult.classList.add(&#x27;show&#x27;);copyBtn.style.display=&#x27;block&#x27;;copyStatus.textContent=&#x27;この文章はまだ誰にも送られていません。&#x27;});copyBtn.addEventListener(&#x27;click&#x27;,async()=&gt;{try{await navigator.clipboard.writeText(draftText);copyStatus.textContent=&#x27;文章をコピーしました。送る相手は自分で決めてね。&#x27;}catch(e){copyStatus.textContent=&#x27;コピーできませんでした。表示された文章を選択してコピーしてください。&#x27;}});document.getElementById(&#x27;erase&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{memo.value=&#x27;&#x27;;draftText=&#x27;&#x27;;draftResult.textContent=&#x27;&#x27;;draftResult.classList.remove(&#x27;show&#x27;);copyBtn.style.display=&#x27;none&#x27;;copyStatus.textContent=&#x27;入力した文章を消しました。&#x27;;memo.focus()});if(location.hash===&#x27;#voice&#x27;)switchTab(0);
-&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-"></iframe></div>
 
-<nav class="mobile-nav" aria-label="スマホメニュー">
+/* Ver.3 父母・指導者の声かけガイド */
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+.guide-choice{border:1px solid #e7d9d9;background:#fff;border-radius:14px;padding:14px 8px;min-height:66px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;color:#263348;font:inherit;font-weight:800;cursor:pointer;text-align:center}
+.guide-choice.active{border:2px solid #9B070A;background:#fff1f0;color:#880609}
+.guide-choice:focus-visible,.guide-copy:focus-visible{outline:3px solid #2266b3;outline-offset:3px}
+.guide-result{background:#fbfaf9;border:1px solid #e8e1dd;border-radius:18px;padding:18px;margin:14px 0;line-height:1.75}
+.guide-label{color:#880609;font-size:12px;font-weight:900;letter-spacing:.025em;margin:15px 0 5px}
+.guide-label:first-child{margin-top:0}
+.guide-result p{margin:0 0 8px}
+.guide-speech{background:#fff;border-left:5px solid #9B070A;border-radius:12px;padding:15px;font-weight:800;font-size:16px;color:#1c3045}
+.guide-copy{margin-top:15px;border:0;background:#9B070A;color:white;border-radius:12px;padding:12px 16px;min-height:44px;font:inherit;font-weight:800;cursor:pointer}
+.guide-status{font-size:12px;margin-left:10px;color:#346446}
+@media(min-width:700px){.guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;header&gt;&lt;div class=&quot;container&quot;&gt;&lt;div class=&quot;topline&quot;&gt;&lt;div class=&quot;brand&quot;&gt;NEXT PLAY &lt;span style=&quot;font-weight:450&quot;&gt;/ 次の一歩へ。&lt;/span&gt;&lt;/div&gt;&lt;span class=&quot;version&quot;&gt;体験デモ Ver.3&lt;/span&gt;&lt;/div&gt;&lt;div aria-hidden=&quot;true&quot; class=&quot;hero-art&quot;&gt;⚾ 🌿&lt;/div&gt;&lt;h1&gt;こころのベンチ&lt;/h1&gt;&lt;p&gt;疲れたら、ちょっと座っていい。&lt;br/&gt;元気になったら、また次の一歩へ。&lt;br/&gt;野球が好きでも、つらい日はあるから。&lt;/p&gt;&lt;div class=&quot;hero-bottom&quot;&gt;&lt;a class=&quot;jump&quot; href=&quot;#check&quot;&gt;いまの気持ちを選ぶ&lt;/a&gt;&lt;a class=&quot;jump alt&quot; href=&quot;#voice&quot;&gt;先輩の声を読む&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/header&gt;&lt;main class=&quot;container&quot;&gt;&lt;div aria-label=&quot;対象者を選ぶ&quot; class=&quot;tabs&quot; role=&quot;tablist&quot;&gt;&lt;button aria-controls=&quot;player&quot; aria-selected=&quot;true&quot; class=&quot;tab active&quot; id=&quot;playerTab&quot; role=&quot;tab&quot; type=&quot;button&quot;&gt;選手のみんなへ&lt;/button&gt;&lt;button aria-controls=&quot;parent&quot; aria-selected=&quot;false&quot; class=&quot;tab&quot; id=&quot;parentTab&quot; role=&quot;tab&quot; type=&quot;button&quot;&gt;父母・指導者の方へ&lt;/button&gt;&lt;/div&gt;
+&lt;div aria-labelledby=&quot;playerTab&quot; class=&quot;audience active&quot; id=&quot;player&quot; role=&quot;tabpanel&quot;&gt;&lt;section class=&quot;panel&quot; id=&quot;check&quot;&gt;&lt;div class=&quot;tag&quot;&gt;01 / CHECK IN&lt;/div&gt;&lt;h2&gt;いま、どんな気持ち？&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;どんな答えでも大丈夫。正解も点数もないよ。選ぶだけでOK。&lt;/p&gt;&lt;div class=&quot;choices&quot; id=&quot;moods&quot;&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;happy&quot;&gt;😊&lt;br/&gt;楽しい&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;tired&quot;&gt;😮‍💨&lt;br/&gt;疲れている&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;sad&quot;&gt;😔&lt;br/&gt;落ち込んでいる&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;quit&quot;&gt;💭&lt;br/&gt;辞めたいかも&lt;/button&gt;&lt;/div&gt;&lt;div aria-live=&quot;polite&quot; class=&quot;response&quot; id=&quot;moodResponse&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;02 / FIND YOUR FEELING&lt;/div&gt;&lt;h2&gt;何がいちばん気になってる？&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;理由がわからなくても大丈夫。近いものを一つ選んでみよう。&lt;/p&gt;&lt;div class=&quot;choices&quot; id=&quot;worries&quot;&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;skill&quot;&gt;⚾&lt;br/&gt;練習や実力&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;game&quot;&gt;🧢&lt;br/&gt;試合や出番&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;friends&quot;&gt;🤝&lt;br/&gt;仲間とのこと&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;adult&quot;&gt;🗣️&lt;br/&gt;大人とのこと&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;body&quot;&gt;🌙&lt;br/&gt;体の疲れ&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;home&quot;&gt;🏠&lt;br/&gt;家のこと・費用&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;other&quot;&gt;🌧️&lt;br/&gt;うまく言えない&lt;/button&gt;&lt;/div&gt;&lt;div aria-live=&quot;polite&quot; class=&quot;response&quot; id=&quot;worryResponse&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section class=&quot;panel soft&quot; id=&quot;voice&quot;&gt;&lt;div class=&quot;tag&quot;&gt;03 / VOICES&lt;/div&gt;&lt;h2&gt;先輩も、悩んだことがある&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;同じ悩みを持つ人がいるかもしれない。ここにある声は&lt;strong&gt;掲載イメージのための架空の文章&lt;/strong&gt;だよ。&lt;/p&gt;&lt;div class=&quot;story&quot;&gt;&lt;h3&gt;「みんなより上手くできなくて…」&lt;/h3&gt;&lt;p&gt;練習がつらい日もあった。そんなとき「今日はここができた」と小さな変化を見つけるようにした。つらい気持ちは、大人にも話した。&lt;/p&gt;&lt;p class=&quot;note&quot;&gt;※架空の例文／卒団生の実話ではありません&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;story&quot;&gt;&lt;h3&gt;「試合に出られず、くやしかった」&lt;/h3&gt;&lt;p&gt;何のために練習しているのか、わからなくなった。でも自分の気持ちを聞いてくれる人がいて、少し楽になった。&lt;/p&gt;&lt;p class=&quot;note&quot;&gt;※架空の例文／卒団生の実話ではありません&lt;/p&gt;&lt;/div&gt;&lt;div class=&quot;story&quot;&gt;&lt;h3&gt;「仲間とうまく話せなかった」&lt;/h3&gt;&lt;p&gt;ひとりで我慢していたけれど、学校の先生に話すところから始めた。相手とすぐに仲直りしなくても、相談してよかったと思った。&lt;/p&gt;&lt;p class=&quot;note&quot;&gt;※架空の例文／卒団生の実話ではありません&lt;/p&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;04 / TALK TO SOMEONE&lt;/div&gt;&lt;h2&gt;ひとりで抱えなくていい&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;ここに書いたことを、誰かに見せる必要はないよ。でも話したいと思ったら、言葉をつくるお手伝いができる。&lt;/p&gt;&lt;label class=&quot;label&quot; for=&quot;memo&quot;&gt;いま伝えたいこと（書かなくてもOK）&lt;/label&gt;&lt;textarea id=&quot;memo&quot; maxlength=&quot;800&quot; placeholder=&quot;例：最近、練習に行くのがつらい。理由はまだうまく言えない。&quot;&gt;&lt;/textarea&gt;&lt;p class=&quot;note&quot;&gt;入力内容はサーバーへ送らず、保存もしません。ページを閉じたり更新したりすると消えます。共有端末では画面に注意してね。&lt;/p&gt;&lt;button class=&quot;action&quot; id=&quot;draft&quot; type=&quot;button&quot;&gt;相談する言葉をつくる&lt;/button&gt;&lt;div aria-live=&quot;polite&quot; class=&quot;sharebox&quot; id=&quot;draftResult&quot;&gt;&lt;/div&gt;&lt;button class=&quot;action outline&quot; id=&quot;copyDraft&quot; style=&quot;display:none&quot; type=&quot;button&quot;&gt;文章をコピーする&lt;/button&gt;&lt;button class=&quot;action ghost&quot; id=&quot;erase&quot; type=&quot;button&quot;&gt;入力・相談文を消す&lt;/button&gt;&lt;p class=&quot;status&quot; id=&quot;copyStatus&quot; role=&quot;status&quot;&gt;&lt;/p&gt;&lt;div class=&quot;callout&quot; style=&quot;margin-top:18px&quot;&gt;相談相手は、親、学校の先生、信頼できるコーチ、チームの外の大人でもいいよ。もし大人から怖い思いをさせられているなら、その人以外に話してね。&lt;strong&gt;辞めるかどうかも、急いで決めなくて大丈夫。&lt;/strong&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;05 / SMALL STEP&lt;/div&gt;&lt;h2&gt;今日の小さな一歩&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;頑張るだけが答えじゃない。いまできそうなことを選んでみよう。&lt;/p&gt;&lt;div class=&quot;choices&quot; id=&quot;steps&quot;&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;rest&quot;&gt;🌙&lt;br/&gt;今日は休む&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;talk&quot;&gt;🫶&lt;br/&gt;誰かに話す&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;good&quot;&gt;🌱&lt;br/&gt;できたことを探す&lt;/button&gt;&lt;button aria-pressed=&quot;false&quot; class=&quot;choice&quot; data-key=&quot;wait&quot;&gt;☁️&lt;br/&gt;今日は決めない&lt;/button&gt;&lt;/div&gt;&lt;div aria-live=&quot;polite&quot; class=&quot;response&quot; id=&quot;stepResponse&quot;&gt;&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;
+&lt;div aria-labelledby=&quot;parentTab&quot; class=&quot;audience&quot; id=&quot;parent&quot; role=&quot;tabpanel&quot;&gt;&lt;section class=&quot;panel guidance-section&quot; id=&quot;voiceGuide&quot;&gt;
+&lt;div class=&quot;tag&quot;&gt;FOR PARENTS &amp;amp; COACHES / VER.3 DEMO&lt;/div&gt;
+&lt;h2&gt;気になる様子から、声かけを考えよう&lt;/h2&gt;
+&lt;p class=&quot;lead&quot;&gt;選手の様子を選ぶと、最初のひと言と、その後の接し方のヒントが表示されます。答えを決めつけず、本人の話を聞くための参考にしてください。&lt;/p&gt;
+&lt;div aria-label=&quot;気になる選手の様子&quot; class=&quot;guide-grid&quot; id=&quot;guideChoices&quot; role=&quot;group&quot;&gt;
+&lt;button aria-pressed=&quot;true&quot; class=&quot;guide-choice active&quot; data-scene=&quot;quiet&quot; type=&quot;button&quot;&gt;😔 &lt;span&gt;元気がない&lt;/span&gt;&lt;/button&gt;
+&lt;button aria-pressed=&quot;false&quot; class=&quot;guide-choice&quot; data-scene=&quot;absent&quot; type=&quot;button&quot;&gt;🏠 &lt;span&gt;練習を休みがち&lt;/span&gt;&lt;/button&gt;
+&lt;button aria-pressed=&quot;false&quot; class=&quot;guide-choice&quot; data-scene=&quot;bench&quot; type=&quot;button&quot;&gt;⚾ &lt;span&gt;試合に出られない&lt;/span&gt;&lt;/button&gt;
+&lt;button aria-pressed=&quot;false&quot; class=&quot;guide-choice&quot; data-scene=&quot;friends&quot; type=&quot;button&quot;&gt;🤝 &lt;span&gt;仲間との関係&lt;/span&gt;&lt;/button&gt;
+&lt;button aria-pressed=&quot;false&quot; class=&quot;guide-choice&quot; data-scene=&quot;quit&quot; type=&quot;button&quot;&gt;💬 &lt;span&gt;辞めたいと言った&lt;/span&gt;&lt;/button&gt;
+&lt;button aria-pressed=&quot;false&quot; class=&quot;guide-choice&quot; data-scene=&quot;silent&quot; type=&quot;button&quot;&gt;🌱 &lt;span&gt;何も話さない&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;
+&lt;div aria-live=&quot;polite&quot; class=&quot;guide-result&quot; id=&quot;guideResult&quot;&gt;
+&lt;div class=&quot;guide-label&quot;&gt;こんな様子が見えたら&lt;/div&gt;&lt;p id=&quot;guideSituation&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;guide-label&quot;&gt;最初のひと言&lt;/div&gt;&lt;div class=&quot;guide-speech&quot; id=&quot;guideGood&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;guide-label&quot;&gt;できれば避けたい言葉&lt;/div&gt;&lt;p id=&quot;guideAvoid&quot;&gt;&lt;/p&gt;
+&lt;div class=&quot;guide-label&quot;&gt;その後、どうする？&lt;/div&gt;&lt;p id=&quot;guideNext&quot;&gt;&lt;/p&gt;
+&lt;button class=&quot;guide-copy&quot; id=&quot;guideCopy&quot; type=&quot;button&quot;&gt;声かけの言葉をコピー&lt;/button&gt;&lt;span aria-live=&quot;polite&quot; class=&quot;guide-status&quot; id=&quot;guideCopyStatus&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;callout&quot;&gt;&lt;strong&gt;大切なのは、魔法の言葉より「聞く姿勢」。&lt;/strong&gt;&lt;br/&gt;この言葉で必ず解決するわけではありません。理由を決めつけず、話してくれた内容を否定しないことから始めましょう。&lt;/div&gt;
+&lt;/section&gt;
+&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;AFTER THE FIRST WORD&lt;/div&gt;&lt;h2&gt;声をかけた後に大切なこと&lt;/h2&gt;
+&lt;ul class=&quot;bullets&quot;&gt;&lt;li&gt;答えを急かさず、「話してくれてありがとう」と伝える。&lt;/li&gt;&lt;li&gt;相談先は本人が安心できる大人を選べるようにする。指導者が原因の悩みなら、チーム外の大人でもよい。&lt;/li&gt;&lt;li&gt;体調不良や休みが続く場合は、保護者・学校・必要に応じ専門家と連携する。&lt;/li&gt;&lt;li&gt;いじめ、暴力、強い恐怖が疑われるときは、励ますだけで済ませず安全確保を優先する。&lt;/li&gt;&lt;li&gt;「辞めたい」という気持ちも否定せず、続ける・休む・離れる選択を本人と一緒に考える。&lt;/li&gt;&lt;/ul&gt;
+&lt;p class=&quot;note&quot;&gt;この機能は会話のヒントを示す試作品です。選手の状態を判定する機能や相談を受け付ける窓口ではありません。&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;FOR PARENTS &amp;amp; COACHES&lt;/div&gt;&lt;h2&gt;「こころのベンチ」の目的&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;選手を無理に引き止めるのではなく、つらい気持ちを言葉にして、安心して相談できるきっかけをつくるための試作アプリです。&lt;/p&gt;&lt;div class=&quot;callout&quot;&gt;&lt;strong&gt;目指すのは「退団の防止」だけではありません。&lt;/strong&gt;&lt;br/&gt;選手一人ひとりの気持ちを大切にして、安心して野球と向き合える環境をつくることです。&lt;/div&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;HOW TO SUPPORT&lt;/div&gt;&lt;h2&gt;こんな声かけから&lt;/h2&gt;&lt;div class=&quot;example&quot;&gt;&lt;strong&gt;「練習に行きたくない」と言われたら&lt;/strong&gt;&lt;br/&gt;「そうなんだね。何かあった？ 今すぐ話さなくてもいいよ」&lt;/div&gt;&lt;div class=&quot;example&quot; style=&quot;margin-top:12px&quot;&gt;&lt;strong&gt;「野球を辞めたい」と言われたら&lt;/strong&gt;&lt;br/&gt;「話してくれてありがとう。何がつらいのか、一緒に整理しよう」&lt;/div&gt;&lt;div class=&quot;example&quot; style=&quot;margin-top:12px&quot;&gt;&lt;strong&gt;何も話してくれないときは&lt;/strong&gt;&lt;br/&gt;「話したくなったらいつでも聞くよ。別の大人に相談してもいいよ」&lt;/div&gt;&lt;p class=&quot;note&quot;&gt;つらさを軽く見たり、本人の意思を無視して説得したりしないことが大切です。&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;NEXT STEP&lt;/div&gt;&lt;h2&gt;試作品への意見を集めましょう&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;まずは選手・父母・指導者それぞれに、使いやすさや必要な支援を聞いてから正式版を検討します。&lt;/p&gt;&lt;ul class=&quot;bullets&quot;&gt;&lt;li&gt;選手：どの言葉が安心する？ 使いにくい場所は？&lt;/li&gt;&lt;li&gt;父母：家庭で困る場面は？ どんな声かけが役立つ？&lt;/li&gt;&lt;li&gt;指導者：選手を支えるために不足している仕組みは？&lt;/li&gt;&lt;li&gt;相談担当：相談を受けた後、誰がどのように対応する？&lt;/li&gt;&lt;/ul&gt;&lt;p class=&quot;note&quot;&gt;ヒアリングは任意とし、選手の気持ちや回答を評価・選抜・指導上の不利益につなげないことが前提です。&lt;/p&gt;&lt;/section&gt;&lt;section class=&quot;panel&quot;&gt;&lt;div class=&quot;tag&quot;&gt;PRIVACY &amp;amp; SAFETY&lt;/div&gt;&lt;h2&gt;運用前に決めたいこと&lt;/h2&gt;&lt;ul class=&quot;bullets&quot;&gt;&lt;li&gt;相談先は本人が選べるようにする&lt;/li&gt;&lt;li&gt;誰が相談を受け、いつ返事をするかを明確にする&lt;/li&gt;&lt;li&gt;本人の同意なく相談内容をチーム内に広めない（安全確保が必要な場合を除く）&lt;/li&gt;&lt;li&gt;実際の「先輩の声」は本人・必要に応じて保護者の同意を得て掲載する&lt;/li&gt;&lt;li&gt;深刻な悩みがあるときはアプリだけで対応せず、信頼できる大人や適切な専門窓口につなぐ&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;&lt;/div&gt;
+&lt;p class=&quot;disclaimer&quot;&gt;【企画デモ Ver.3】このHTMLは「NEXT PLAY｜次の一歩へ。」に追加する独立型の試作です。既存アプリの15問は含みません。入力内容の保存・集計・送信・LINE連携は行いません。緊急時の相談対応機能もありません。実運用前に相談体制と個人情報の扱いを整えてください。&lt;/p&gt;&lt;footer&gt;NEXT PLAY｜こころのベンチ Ver.3&lt;br/&gt;ちょっと休んで、また次の一歩へ。&lt;/footer&gt;&lt;/main&gt;&lt;script&gt;
+'use strict';const moods={happy:'いいね。楽しい気持ちを大切にしよう。もちろん、楽しくない日があっても大丈夫。',tired:'おつかれさま。疲れた日は休んでいいよ。頑張り続けなくても、君の価値は変わらない。',sad:'落ち込んだんだね。無理に元気を出さなくていい。つらい気持ちを、そのまま大切にしていいよ。',quit:'「辞めたいかも」と思うほど、しんどいことがあるのかもしれないね。辞めることも続けることも、急いで決めなくていい。信頼できる人と一緒に考えてみよう。'};const worries={skill:'うまくできないと、くやしいよね。できなかったことだけでなく、今日少しでも変わったことを探してみよう。負担が大きいときは、練習のことを大人に相談していい。',game:'出番が少なくて、さみしい・くやしいと感じるのは自然なことだよ。気持ちを我慢せず、信頼できる人に話していい。',friends:'仲間のことでしんどいとき、ひとりで解決しなくていいよ。安心できる大人を頼っていい。いじめや嫌がらせがあるなら、無理に相手と直接話さなくても大丈夫。',adult:'大人の言葉や接し方がつらいときは、無理してその人に伝えなくていい。親、学校の先生、チームの外の大人など、別の安心できる人に話そう。',body:'体が疲れているなら、休息も必要だよ。痛みや体調の悪さが続くときは、保護者や医療の専門家に相談しよう。',home:'家のことやお金のことは、君ひとりが背負わなくていい。家族や信頼できる大人と一緒に考えることだよ。',other:'うまく言葉にできなくても大丈夫。「何となくつらい」だけでも、相談する理由になるよ。'};const steps={rest:'今日はゆっくり休んでね。休むことも、自分を大切にする行動だよ。',talk:'話してみようと思えたことが、ひとつの大切な一歩だよ。短いひと言でも十分。',good:'今日のできたことは、小さくても大切だよ。何も思いつかない日は、探さなくても大丈夫。',wait:'今日は決めない。それも立派な選択だよ。安心できるときに、少しずつ考えよう。'};let selectedMood='',selectedWorry='',selectedStep='',draftText='';function wire(id,table,out,save){document.querySelectorAll('#'+id+' .choice').forEach(b=&gt;b.addEventListener('click',()=&gt;{document.querySelectorAll('#'+id+' .choice').forEach(x=&gt;{x.classList.remove('selected');x.setAttribute('aria-pressed','false')});b.classList.add('selected');b.setAttribute('aria-pressed','true');save(b.dataset.key);let result=document.getElementById(out);result.textContent=table[b.dataset.key];result.classList.add('show')}))}wire('moods',moods,'moodResponse',v=&gt;selectedMood=v);wire('worries',worries,'worryResponse',v=&gt;selectedWorry=v);wire('steps',steps,'stepResponse',v=&gt;selectedStep=v);
+const tabs=[document.getElementById('playerTab'),document.getElementById('parentTab')],panels=[document.getElementById('player'),document.getElementById('parent')];function switchTab(i){tabs.forEach((t,j)=&gt;{let on=i===j;t.classList.toggle('active',on);t.setAttribute('aria-selected',String(on));panels[j].classList.toggle('active',on)});window.scrollTo({top:0,behavior:'instant'})}tabs.forEach((t,i)=&gt;t.addEventListener('click',()=&gt;switchTab(i)));
+const memo=document.getElementById('memo'),draftResult=document.getElementById('draftResult'),copyBtn=document.getElementById('copyDraft'),copyStatus=document.getElementById('copyStatus');document.getElementById('draft').addEventListener('click',()=&gt;{const txt=memo.value.trim();draftText='少し話を聞いてほしいことがあります。\n'+(txt?'今の気持ち：'+txt+'\n':'うまく説明できないけれど、少しつらいと感じています。\n')+'今すぐ答えを出すのではなく、まず話を聞いてもらえますか。';draftResult.textContent=draftText;draftResult.classList.add('show');copyBtn.style.display='block';copyStatus.textContent='この文章はまだ誰にも送られていません。'});copyBtn.addEventListener('click',async()=&gt;{try{await navigator.clipboard.writeText(draftText);copyStatus.textContent='文章をコピーしました。送る相手は自分で決めてね。'}catch(e){copyStatus.textContent='コピーできませんでした。表示された文章を選択してコピーしてください。'}});document.getElementById('erase').addEventListener('click',()=&gt;{memo.value='';draftText='';draftResult.textContent='';draftResult.classList.remove('show');copyBtn.style.display='none';copyStatus.textContent='入力した文章を消しました。';memo.focus()});if(location.hash==='#voice')switchTab(0);
+
+/* Ver.3: 無通信・保存なしの声かけガイド */
+const guideData={
+ quiet:{situation:'練習や試合の後、いつもより元気がなく、口数も少ない。',good:'「今日は少し疲れたかな？ 話したくなったら、いつでも聞くよ」',avoid:'「どうしてそんなに元気がないの？」と問い詰める。',next:'まず休める環境をつくり、少し時間を置いて様子を見る。変化が続く場合は、体調も含めて気にかける。'},
+ absent:{situation:'最近、練習を休む回数が増え、行く前に気が重そう。',good:'「最近、練習に行くのが大変そうだね。困っていることはある？」',avoid:'「休んでばかりでは上達しないぞ」と決めつける。',next:'疲れ・けが・友人関係・家庭の負担など、いろいろな可能性がある。本人の話を聞き、必要なら休みや相談の調整をする。'},
+ bench:{situation:'試合に出られず、悔しそうにしている。',good:'「出られなくて悔しかったよね。今日はどんな気持ちだった？」',avoid:'「もっと練習すれば出られるよ」と気持ちを飛ばして励ます。',next:'気持ちを受け止めた後、本人が望むなら次にできることを一緒に考える。今すぐ前向きにならなくても大丈夫。'},
+ friends:{situation:'仲間と話さなくなった、チームで一人になることが増えた。',good:'「最近、チームの中で居づらいと感じることはない？」',avoid:'「仲間なんだから仲良くしなさい」と片づける。',next:'言いづらいこともある。無理に本人同士で解決させず、いじめや嫌がらせが疑われるなら安全を優先して大人が対応する。'},
+ quit:{situation:'「もう野球を辞めたい」と話してきた。',good:'「話してくれてありがとう。そう思うほど大変だったんだね。よかったら聞かせて」',avoid:'「ここまで頑張ったのにもったいない」「絶対辞めるな」とすぐ説得する。',next:'まず理由と本人の希望を確かめる。続けることだけを正解にせず、休む・環境を変えることも含めて安心して考える。'},
+ silent:{situation:'聞いても「別に」「何でもない」とだけ答える。',good:'「今は話さなくても大丈夫。話したくなったら聞くよ。ほかの大人でもいいからね」',avoid:'「ちゃんと理由を言いなさい」と無理に話させる。',next:'追及せず、普段どおりの関わりを続ける。ただし明らかな危険や深刻な不調が見えるときは、話すのを待つだけにしない。'}
+};
+let activeGuide='quiet';
+function showGuide(key){
+ if(!guideData[key])return;
+ activeGuide=key;
+ document.querySelectorAll('#guideChoices .guide-choice').forEach(b=&gt;{let on=b.dataset.scene===key;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});
+ const v=guideData[key];
+ document.getElementById('guideSituation').textContent=v.situation;
+ document.getElementById('guideGood').textContent=v.good;
+ document.getElementById('guideAvoid').textContent=v.avoid;
+ document.getElementById('guideNext').textContent=v.next;
+ document.getElementById('guideCopyStatus').textContent='';
+}
+document.querySelectorAll('#guideChoices .guide-choice').forEach(b=&gt;b.addEventListener('click',()=&gt;showGuide(b.dataset.scene)));
+document.getElementById('guideCopy').addEventListener('click',async()=&gt;{
+ const message=guideData[activeGuide].good;
+ try{if(!navigator.clipboard || !navigator.clipboard.writeText)throw new Error('unsupported');await navigator.clipboard.writeText(message);document.getElementById('guideCopyStatus').textContent='コピーしました';}
+ catch(e){document.getElementById('guideCopyStatus').textContent='コピーできない場合は、言葉を長押しして選択してください';}
+});
+showGuide('quiet');
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+" title="こころのベンチ Ver.3"></iframe></div>
+
+<div id="helpOverlay" class="help-overlay" hidden>
+  <div class="help-panel" role="dialog" aria-modal="true" aria-labelledby="helpTitle" tabindex="-1" id="helpDialog">
+    <div class="help-heading"><h2 id="helpTitle">このアプリの使い方</h2><p>NEXT PLAY｜次の一歩へ。<br>強くなる日も、立ち止まる日も。</p></div>
+    <button type="button" class="help-close" onclick="closeHelp()" aria-label="使い方を閉じる">×</button>
+    <div class="help-content">
+      <h3>このアプリの目的</h3>
+      <p>野球では、うまくいく日も、失敗して落ち込む日もあります。このアプリは、越谷ボーイズの選手が<strong>自分で考える力</strong>を育て、つらいときには<strong>自分の気持ちを大切にできるようにする</strong>ためのものです。</p>
+      <p>「頑張らなきゃ」と無理をするためではありません。疲れたら休んで、困ったら誰かに話してもいい。自分のペースで使ってください。</p>
+      <h3>① メンタルトレーニングの使い方（選手向け）</h3>
+      <ol>
+        <li>上の<strong>「⚾ メンタルトレーニング」</strong>を押します。</li>
+        <li>画面に出る「君ならどうする？」の質問を読みます。</li>
+        <li>4つの答えから、自分がよいと思うものを1つ選びます。</li>
+        <li>答えを選んだら、<strong>「考え方」「次の行動」「チームへの行動」</strong>を読んでみましょう。</li>
+        <li><strong>「次の一球へ」</strong>で次の問題に進みます。前の問題に戻ったり、ランダムに出したりもできます。</li>
+        <li><strong>「成長ストーリー」</strong>では、練習したいテーマを選べます。全15問ですが、1日1問だけでも大丈夫です。</li>
+      </ol>
+      <p class="help-note">ここでは点数や他の人との競争よりも、「次はどうしよう？」と考えることを大切にしています。</p>
+      <h3>② こころのベンチの使い方（選手向け）</h3>
+      <ol>
+        <li>上の<strong>「♡ こころのベンチ」</strong>を押します。</li>
+        <li><strong>「選手のみんなへ」</strong>を開きます。</li>
+        <li><strong>「いま、どんな気持ち？」</strong>から、今の自分に近い気持ちを選んでみます。選ぶだけでもOKです。</li>
+        <li>気になることがあれば、<strong>悩みの種類</strong>を選んでメッセージを読んでみましょう。</li>
+        <li><strong>「先輩の声」</strong>の例を読んだり、今日の小さな一歩を考えたりできます。</li>
+        <li>誰かに話したいときは<strong>相談メッセージ</strong>を作れます。送るかどうかは自分で決められます。</li>
+      </ol>
+      <p class="help-note">こころのベンチに<strong>正解・不正解はありません</strong>。「辞めたいかも」と思ったときも、一人で結論を出さなくて大丈夫です。信頼できる大人に話してみましょう。</p>
+      <h3>③ 父母・指導者の方の使い方</h3>
+      <ol>
+        <li><strong>「こころのベンチ」</strong>を開き、<strong>「父母・指導者の方へ」</strong>を選びます。</li>
+        <li>「元気がない」「練習を休みがち」など、気になる選手の様子を選びます。</li>
+        <li><strong>声かけの例、避けたい言葉、声をかけた後の接し方</strong>を確認します。</li>
+        <li>必要なら言葉をコピーして参考にしてください。ただし、同じ言葉がすべての子に合うわけではありません。</li>
+        <li>答えを急がせず、本人の話をよく聞きましょう。つらさが続く場合や安全面で気になることがある場合は、学校や適切な専門家にも相談してください。</li>
+      </ol>
+      <h3>安心して使うための約束</h3>
+      <ul>
+        <li>アプリを使うかどうかは、選手自身が決めて大丈夫です。</li>
+        <li>このテスト版では、こころのベンチに書いた悩みを<strong>チームへ自動送信しません</strong>。</li>
+        <li>相談文は送信ボタンで勝手に送られることはありません。誰に話すか、自分で選べます。</li>
+        <li>このアプリだけで問題を解決しようとせず、必要なときは周りの信頼できる人に頼ってください。</li>
+      </ul>
+      <p class="help-note"><strong>ちょっと休んで、また次の一歩へ。</strong><br>自分の気持ちも、仲間の気持ちも大切にしよう。</p>
+    </div>
+  </div>
+</div>
+
+<nav aria-label="スマホメニュー" class="mobile-nav">
 <button class="active" onclick="goTraining(null)"><span>⌂</span>ホーム</button>
 <button onclick="goTraining('question')"><span>⚾</span>今日の1問</button>
 <button onclick="goTraining('steps')"><span>↗</span>成長</button>
 <button onclick="goTraining('promise')"><span>★</span>約束</button>
 <button class="bench-link" onclick="switchMode('bench')"><span>♡</span>ベンチ</button>
 </nav>
-<footer>越谷ボーイズ｜NEXT PLAY × こころのベンチ Ver.2<br>Production: SPC</footer>
-
+<footer>越谷ボーイズ｜NEXT PLAY × こころのベンチ Ver.3<br/>Production: SPC</footer>
 <script>
+
+let helpReturnFocus=null;
+function openHelp(){helpReturnFocus=document.activeElement;document.getElementById('helpOverlay').hidden=false;document.body.style.overflow='hidden';document.getElementById('helpDialog').focus();}
+function closeHelp(){document.getElementById('helpOverlay').hidden=true;document.body.style.overflow='';if(helpReturnFocus&&helpReturnFocus.focus)helpReturnFocus.focus();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!document.getElementById('helpOverlay').hidden)closeHelp();});
+document.getElementById('helpOverlay').addEventListener('click',e=>{if(e.target.id==='helpOverlay')closeHelp();});
+
 const data=[
 {c:"自分を整える",q:"自分のエラーで相手に点が入った。次の守備につく前、どうする？",a:["下を向いて引きずる","誰かのせいにする","長く息を吐き、次の一球でできることを決める","ミスを忘れようと無理に考えない"],ok:2,think:"失敗した事実は消せません。でも、次の一球の準備は今からできます。",next:"息を吐く → グローブを見る → 『次！』と声を出す。",team:"近くの仲間にも『次いこう』と声をかける。"},
 {c:"自分を整える",q:"2打席連続で三振。3打席目に入る前に大切なのは？",a:["絶対ヒットを打つと力む","前の三振を何度も思い出す","自分でコントロールできることを1つ決める","監督の顔色を見る"],ok:2,think:"結果ではなく、今できる準備に意識を戻します。",next:"『ボールを最後まで見る』など1つだけ決める。",team:"打席を終えたら、次の打者に相手投手の情報を伝える。"},
